@@ -2,7 +2,7 @@ models:
   Client:
     name: string:150
     relationships:
-      hasMany: User
+      belongsTo: User
 
 controllers:
   Client:
