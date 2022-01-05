@@ -1,0 +1,11 @@
+created:
+    - app/Http/Controllers/ClientController.php
+    - database/factories/ClientFactory.php
+    - database/migrations/2022_01_05_175019_create_clients_table.php
+    - app/Models/Client.php
+    - tests/Feature/Http/Controllers/ClientControllerTest.php
+    - resources/views/client/index.blade.php
+updated:
+    - routes/web.php
+models:
+    Client: { name: 'string:150', relationships: { hasMany: User } }

@@ -1,0 +1,11 @@
+models:
+  Client:
+    name: string:150
+    relationships:
+      hasMany: User
+
+controllers:
+  Client:
+    index:
+      query: all
+      render: client.index with:clients
