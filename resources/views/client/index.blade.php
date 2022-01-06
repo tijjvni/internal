@@ -6,6 +6,10 @@
     </x-slot>
 
     <div class="py-12">
-        @livewire('client.index', ['clients' => $clients])
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                @livewire('client.index', ['clients' => $clients])
+            </div>
+        </div>        
     </div>
 </x-app-layout>
