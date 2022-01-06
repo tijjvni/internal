@@ -5,7 +5,21 @@ models:
       belongsTo: User
 
 controllers:
-  Client:
+  Clients:
     index:
       query: all
-      render: client.index with:clients
+      render: clients.index with:clients
+    create:
+      render: clients.create
+    store:
+      validate: title, content
+      save: client
+      send: ClientWelcome to:client.user.email with:client
+      dispatch: WelcomeClient with:client
+      fire: NewClient with:client
+      flash: client.name
+      redirect: clients.index
+    show:
+      find: client.id
+      render: clients.show with:client
+

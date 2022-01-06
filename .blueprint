@@ -1,9 +1,10 @@
 created:
-    - app/Http/Controllers/ClientController.php
+    - app/Http/Controllers/ClientsController.php
     - database/factories/ClientFactory.php
-    - database/migrations/2022_01_05_180749_create_clients_table.php
+    - database/migrations/2022_01_06_173223_create_clients_table.php
     - app/Models/Client.php
-    - tests/Feature/Http/Controllers/ClientControllerTest.php
+    - tests/Feature/Http/Controllers/ClientsControllerTest.php
+    - resources/views/clients/create.blade.php
 updated:
     - routes/web.php
 models:
