@@ -1,5 +1,7 @@
+{{--
     @extends('layouts.app')
 
-    @section('content')
+    @section('slot')
         @livewire('client.index', ['clients' => $clients])
     @endsection
+--}}
