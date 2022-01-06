@@ -1,7 +1,5 @@
-{{--
     @extends('layouts.app')
 
     @section('content')
-        <livewire:client.index :clients="$clients">
+        @livewire('client.index', ['clients' => $clients])
     @endsection
---}}

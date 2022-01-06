@@ -21,8 +21,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-
-Route::resource('client', App\Http\Controllers\ClientController::class)->only('index');
-
-
 Route::resource('client', App\Http\Controllers\ClientController::class)->only('index');
