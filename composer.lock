@@ -3386,7 +3386,7 @@
             "require": {
                 "brick/math": "^0.8 || ^0.9",
                 "ext-json": "*",
-                "php": "^7.2 || ^8.0",
+                "php": "^7.3 || ^8.0",
                 "ramsey/collection": "^1.0",
                 "symfony/polyfill-ctype": "^1.8",
                 "symfony/polyfill-php80": "^1.14"
@@ -4158,7 +4158,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2.5",
+                "php": "^7.3 || ^8.0",
                 "psr/log": "^1|^2",
                 "symfony/deprecation-contracts": "^2.1|^3",
                 "symfony/error-handler": "^4.4|^5.0|^6.0",
@@ -4353,7 +4353,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1"
+                "php": "^7.3 || ^8.0"
             },
             "provide": {
                 "ext-ctype": "*"
@@ -5404,7 +5404,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.0.2",
+                "php": "^7.3 || ^8.0",
                 "symfony/polyfill-ctype": "~1.8",
                 "symfony/polyfill-intl-grapheme": "~1.0",
                 "symfony/polyfill-intl-normalizer": "~1.0",
@@ -5806,7 +5806,7 @@
             "require": {
                 "ext-pcre": "*",
                 "graham-campbell/result-type": "^1.0.2",
-                "php": "^7.1.3 || ^8.0",
+                "php": "^7.3 || ^8.0",
                 "phpoption/phpoption": "^1.8",
                 "symfony/polyfill-ctype": "^1.23",
                 "symfony/polyfill-mbstring": "^1.23.1",
@@ -5958,7 +5958,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2 || ^8.0",
+                "php": "^7.3 || ^8.0",
                 "symfony/polyfill-ctype": "^1.8"
             },
             "conflict": {
@@ -9342,7 +9342,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2.5",
+                "php": "^7.3 || ^8.0",
                 "symfony/deprecation-contracts": "^2.1|^3",
                 "symfony/polyfill-ctype": "^1.8"
             },
