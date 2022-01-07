@@ -1,3 +1,4 @@
+
 <?php
 
 namespace App\Models;
@@ -5,7 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Client extends Model
+class Payment extends Model
 {
     use HasFactory;
 
@@ -15,8 +16,9 @@ class Client extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
-        'user_id',
+        'is_completed',
+        'paymentable_id',
+        'paymentable_type',
     ];
 
     /**
@@ -26,10 +28,11 @@ class Client extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'is_completed' => 'boolean',
     ];
 
-    public function user()
+    public function paymentable()
     {
-        return $this->belongsTo(User::class);
+        return $this->morphTo();
     }
 }

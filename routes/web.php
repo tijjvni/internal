@@ -21,4 +21,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::resource('clients', App\Http\Controllers\ClientsController::class)->except('edit', 'update', 'destroy');
+

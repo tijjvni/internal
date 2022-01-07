@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Client extends Model
+class Transaction extends Model
 {
     use HasFactory;
 
@@ -15,8 +15,8 @@ class Client extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
-        'user_id',
+        'amount',
+        'type',
     ];
 
     /**
@@ -26,10 +26,11 @@ class Client extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'type' => 'integer',
     ];
 
-    public function user()
+    public function type()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(TransactionType::class);
     }
 }

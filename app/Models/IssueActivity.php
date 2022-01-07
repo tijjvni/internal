@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Client extends Model
+class IssueActivity extends Model
 {
     use HasFactory;
 
@@ -15,7 +15,8 @@ class Client extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
+        'description',
+        'issue_id',
         'user_id',
     ];
 
@@ -26,7 +27,14 @@ class Client extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'issue_id' => 'integer',
+        'user_id' => 'integer',
     ];
+
+    public function issue()
+    {
+        return $this->belongsTo(Issue::class);
+    }
 
     public function user()
     {

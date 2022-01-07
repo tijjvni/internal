@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Client extends Model
+class TransactionType extends Model
 {
     use HasFactory;
 
@@ -16,7 +16,6 @@ class Client extends Model
      */
     protected $fillable = [
         'name',
-        'user_id',
     ];
 
     /**
@@ -27,9 +26,4 @@ class Client extends Model
     protected $casts = [
         'id' => 'integer',
     ];
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 }

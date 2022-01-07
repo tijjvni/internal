@@ -40,7 +40,7 @@ class ClientsController extends Controller
     {
         $client = Client::create($request->validated());
 
-        Mail::to($client->name)->send(new ClientWelcome($client));
+        Mail::to($client->user->email)->send(new ClientWelcome($client));
 
         WelcomeClient::dispatch($client);
 

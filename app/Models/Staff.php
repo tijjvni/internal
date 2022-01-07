@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Client extends Model
+class Staff extends Model
 {
     use HasFactory;
 
@@ -15,7 +15,8 @@ class Client extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
+        'priority',
+        'role_id',
         'user_id',
     ];
 
@@ -26,7 +27,19 @@ class Client extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'role_id' => 'integer',
+        'user_id' => 'integer',
     ];
+
+    public function payments()
+    {
+        return $this->morphMany(Payment::class, 'paymentable');
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(StaffRole::class);
+    }
 
     public function user()
     {

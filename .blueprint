@@ -1,11 +1,61 @@
 created:
     - app/Http/Controllers/ClientsController.php
+    - app/Http/Controllers/ProjectsController.php
+    - app/Http/Controllers/IssueController.php
     - database/factories/ClientFactory.php
-    - database/migrations/2022_01_06_173223_create_clients_table.php
+    - database/factories/ProjectStatusFactory.php
+    - database/factories/ProjectFactory.php
+    - database/factories/StaffRoleFactory.php
+    - database/factories/StaffFactory.php
+    - database/factories/AdministratorFactory.php
+    - database/factories/IssueStatusFactory.php
+    - database/factories/IssueFactory.php
+    - database/factories/IssueActivityFactory.php
+    - database/factories/TransactionTypeFactory.php
+    - database/factories/TransactionFactory.php
+    - database/factories/PaymentFactory.php
+    - database/migrations/2022_01_07_063253_create_clients_table.php
+    - database/migrations/2022_01_07_063254_create_project_statuses_table.php
+    - database/migrations/2022_01_07_063255_create_projects_table.php
+    - database/migrations/2022_01_07_063256_create_staff_roles_table.php
+    - database/migrations/2022_01_07_063257_create_staff_table.php
+    - database/migrations/2022_01_07_063258_create_administrators_table.php
+    - database/migrations/2022_01_07_063259_create_issue_statuses_table.php
+    - database/migrations/2022_01_07_063300_create_issues_table.php
+    - database/migrations/2022_01_07_063301_create_issue_activities_table.php
+    - database/migrations/2022_01_07_063302_create_transaction_types_table.php
+    - database/migrations/2022_01_07_063303_create_transactions_table.php
+    - database/migrations/2022_01_07_063304_create_payments_table.php
     - app/Models/Client.php
+    - app/Models/ProjectStatus.php
+    - app/Models/Project.php
+    - app/Models/StaffRole.php
+    - app/Models/Staff.php
+    - app/Models/Administrator.php
+    - app/Models/IssueStatus.php
+    - app/Models/Issue.php
+    - app/Models/IssueActivity.php
+    - app/Models/TransactionType.php
+    - app/Models/Transaction.php
+    - app/Models/Payment.php
+    - database/seeders/StaffRoleSeeder.php
+    - database/seeders/ProjectStatusSeeder.php
+    - database/seeders/IssueStatusSeeder.php
     - tests/Feature/Http/Controllers/ClientsControllerTest.php
-    - resources/views/clients/create.blade.php
+    - tests/Feature/Http/Controllers/ProjectsControllerTest.php
+    - tests/Feature/Http/Controllers/IssueControllerTest.php
 updated:
     - routes/web.php
 models:
-    Client: { name: 'string:150', relationships: { belongsTo: User } }
+    Client: { name: 'string:150', user_id: integer, relationships: { belongsTo: User } }
+    Project: { title: 'string:150', description: 'text nullable', status: 'foreign:project_status', relationships: { belongsTo: Client, hasMany: Issue, morphMany: Payment } }
+    ProjectStatus: { name: 'string:50' }
+    IssueStatus: { name: 'string:50' }
+    IssueActivity: { description: text, issue_id: 'foreign:issues', user_id: 'foreign:users' }
+    Issue: { priority: integer, status: 'foreign:issue_status', relationships: { hasMany: IssueActivity } }
+    StaffRole: { name: 'string:50' }
+    Staff: { priority: integer, role_id: 'foreign:staff_role', user_id: 'foreign:users', relationships: { morphMany: Payment } }
+    Administrator: { super_admin: 'boolean default:false', user_id: 'foreign:users' }
+    TransactionType: { name: 'string:150' }
+    Transaction: { amount: integer, type: 'foreign:transaction_types' }
+    Payment: { is_completed: 'boolean default:false', paymentable_id: integer, paymentable_type: string, relationships: { morphTo: paymentable } }

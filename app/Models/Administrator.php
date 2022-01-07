@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Client extends Model
+class Administrator extends Model
 {
     use HasFactory;
 
@@ -15,7 +15,7 @@ class Client extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
+        'super_admin',
         'user_id',
     ];
 
@@ -26,6 +26,8 @@ class Client extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'super_admin' => 'boolean',
+        'user_id' => 'integer',
     ];
 
     public function user()
