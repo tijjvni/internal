@@ -15,6 +15,6 @@
     </x-slot>
 
     <div class="py-12">
-        @livewire('clients.show')
+        @livewire('clients.index')
     </div>
 </x-app-layout>
