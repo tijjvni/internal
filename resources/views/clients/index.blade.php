@@ -10,7 +10,7 @@
         </div>
     </x-slot>
 
-    <div class="py-12">
+    <div class="p-5">
         @livewire('clients.index')
     </div>
 </x-app-layout>
