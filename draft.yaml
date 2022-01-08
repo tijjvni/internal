@@ -74,7 +74,7 @@ controllers:
   Projects:
     index:
       query: all
-      render: projects.index with:project
+      render: projects.index with:projects
     create:
       render: projects.create
     store:
@@ -85,7 +85,7 @@ controllers:
       find: project.id
       render: projects.show with:project
 
-  Issue:
+  Issues:
     index:
       query: all
       render: issues.index with:issues
