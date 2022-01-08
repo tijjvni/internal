@@ -4,7 +4,7 @@ namespace App\Http\Livewire\Clients;
 
 use Livewire\Component;
 
-use App\Http\Requests\ClientsStoreRequest;
+use App\Http\Requests\ClientStoreRequest;
 use App\Models\Client;
 use App\Models\User;
 
@@ -13,7 +13,7 @@ class Create extends Component
     public $name;
     public $email;
 
-    public function createClient(ClientsStoreRequest $request){
+    public function createClient(ClientStoreRequest $request){
         $name = $request->only('name');
         $email = $request->only('email');
 
