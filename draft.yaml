@@ -1,7 +1,7 @@
 models:
   Client:
     name: string:150
-    user_id: integer
+    user_id: foreign:users.id
     relationships:
       belongsTo: User
   ProjectStatus:
