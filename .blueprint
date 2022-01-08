@@ -1,7 +1,7 @@
 created:
     - app/Http/Controllers/ClientsController.php
     - app/Http/Controllers/ProjectsController.php
-    - app/Http/Controllers/IssueController.php
+    - app/Http/Controllers/IssuesController.php
     - database/factories/ClientFactory.php
     - database/factories/ProjectStatusFactory.php
     - database/factories/ProjectFactory.php
@@ -14,18 +14,18 @@ created:
     - database/factories/TransactionTypeFactory.php
     - database/factories/TransactionFactory.php
     - database/factories/PaymentFactory.php
-    - database/migrations/2022_01_08_101637_create_clients_table.php
-    - database/migrations/2022_01_08_101638_create_project_statuses_table.php
-    - database/migrations/2022_01_08_101639_create_projects_table.php
-    - database/migrations/2022_01_08_101640_create_staff_roles_table.php
-    - database/migrations/2022_01_08_101641_create_staff_table.php
-    - database/migrations/2022_01_08_101642_create_administrators_table.php
-    - database/migrations/2022_01_08_101643_create_issue_statuses_table.php
-    - database/migrations/2022_01_08_101644_create_issues_table.php
-    - database/migrations/2022_01_08_101645_create_issue_activities_table.php
-    - database/migrations/2022_01_08_101646_create_transaction_types_table.php
-    - database/migrations/2022_01_08_101647_create_transactions_table.php
-    - database/migrations/2022_01_08_101648_create_payments_table.php
+    - database/migrations/2022_01_08_104853_create_clients_table.php
+    - database/migrations/2022_01_08_104854_create_project_statuses_table.php
+    - database/migrations/2022_01_08_104855_create_projects_table.php
+    - database/migrations/2022_01_08_104856_create_staff_roles_table.php
+    - database/migrations/2022_01_08_104857_create_staff_table.php
+    - database/migrations/2022_01_08_104858_create_administrators_table.php
+    - database/migrations/2022_01_08_104859_create_issue_statuses_table.php
+    - database/migrations/2022_01_08_104900_create_issues_table.php
+    - database/migrations/2022_01_08_104901_create_issue_activities_table.php
+    - database/migrations/2022_01_08_104902_create_transaction_types_table.php
+    - database/migrations/2022_01_08_104903_create_transactions_table.php
+    - database/migrations/2022_01_08_104904_create_payments_table.php
     - app/Models/Client.php
     - app/Models/ProjectStatus.php
     - app/Models/Project.php
@@ -43,7 +43,7 @@ created:
     - database/seeders/IssueStatusSeeder.php
     - tests/Feature/Http/Controllers/ClientsControllerTest.php
     - tests/Feature/Http/Controllers/ProjectsControllerTest.php
-    - tests/Feature/Http/Controllers/IssueControllerTest.php
+    - tests/Feature/Http/Controllers/IssuesControllerTest.php
 updated:
     - routes/web.php
 models:

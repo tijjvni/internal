@@ -27,7 +27,7 @@ class ProjectsControllerTest extends TestCase
 
         $response->assertOk();
         $response->assertViewIs('projects.index');
-        $response->assertViewHas('project');
+        $response->assertViewHas('projects');
     }
 
 
