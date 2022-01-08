@@ -24,8 +24,6 @@ class PaymentFactory extends Factory
     {
         return [
             'is_completed' => $this->faker->boolean,
-            'paymentable_id' => $this->faker->numberBetween(-10000, 10000),
-            'paymentable_type' => $this->faker->word,
         ];
     }
 }

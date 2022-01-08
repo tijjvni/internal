@@ -25,7 +25,7 @@ class TransactionFactory extends Factory
     {
         return [
             'amount' => $this->faker->numberBetween(-10000, 10000),
-            'type' => TransactionType::factory()->create()->type,
+            'type' => TransactionType::factory(),
         ];
     }
 }

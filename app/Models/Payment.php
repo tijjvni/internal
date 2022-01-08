@@ -1,4 +1,3 @@
-
 <?php
 
 namespace App\Models;
@@ -17,8 +16,6 @@ class Payment extends Model
      */
     protected $fillable = [
         'is_completed',
-        'paymentable_id',
-        'paymentable_type',
     ];
 
     /**

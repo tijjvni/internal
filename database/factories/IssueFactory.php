@@ -25,7 +25,7 @@ class IssueFactory extends Factory
     {
         return [
             'priority' => $this->faker->numberBetween(-10000, 10000),
-            'status' => IssueStatus::factory()->create()->status,
+            'status' => IssueStatus::factory(),
         ];
     }
 }

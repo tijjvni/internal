@@ -26,7 +26,7 @@ class ProjectFactory extends Factory
         return [
             'title' => $this->faker->sentence(4),
             'description' => $this->faker->text,
-            'status' => ProjectStatus::factory()->create()->status,
+            'status' => ProjectStatus::factory(),
         ];
     }
 }

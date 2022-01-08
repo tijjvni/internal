@@ -9,7 +9,7 @@ models:
   Project:
     title: string:150
     description: text nullable
-    status: foreign:project_status
+    status: foreign:project_statuses.id
     relationships:
       belongsTo: Client
       hasMany: Issue
@@ -19,35 +19,34 @@ models:
     name: string:50
   Staff:
     priority: integer
-    role_id: foreign:staff_role
-    user_id: foreign:users
+    role_id: foreign:staff_roles.id
+    user_id: foreign:users.id
     relationships:
       morphMany: Payment    
   Administrator:
     super_admin: boolean default:false
-    user_id: foreign:users
+    user_id: foreign:users.id
 
   IssueStatus:
     name: string:50
   Issue:
     priority: integer
-    status: foreign:issue_status
+    status: foreign:issue_statuses.id
     relationships:
       hasMany: IssueActivity
   IssueActivity:
     description: text
-    issue_id: foreign:issues    
-    user_id: foreign:users    
+    issue_id: foreign:issues.id  
+    user_id: foreign:users.id
 
   TransactionType:
     name: string:150
   Transaction:
     amount: integer
-    type: foreign:transaction_types
+    type: foreign:transaction_types.id
   Payment:
     is_completed: boolean default:false
-    paymentable_id: integer
-    paymentable_type: string 
+
     relationships:
       morphTo: paymentable
 
@@ -75,7 +74,7 @@ controllers:
   Projects:
     index:
       query: all
-      render: projects.index with:projects
+      render: projects.index with:project
     create:
       render: projects.create
     store:
@@ -99,4 +98,3 @@ controllers:
     show:
       find: issue.id
       render: issues.show with:issue
-
