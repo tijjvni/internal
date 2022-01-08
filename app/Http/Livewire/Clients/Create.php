@@ -32,6 +32,8 @@ class Create extends Component
         $user->password = bcrypt($password);
         $user->save();
 
+        dd($user);
+
         $client = new Client;
         $client->name = $name;
         $client->user_id = $user->id;
