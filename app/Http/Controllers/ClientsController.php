@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Events\NewClient;
 use App\Http\Requests\ClientsStoreRequest;
-use App\Jobs\WelcomeClient;
 use App\Mail\ClientWelcome;
 use App\Models\Client;
 use Illuminate\Http\Request;
@@ -40,9 +39,9 @@ class ClientsController extends Controller
     {
         $client = Client::create($request->validated());
 
-        Mail::to($client->user->email)->send(new ClientWelcome($client));
+        // Mail::to($client->user->email)->send(new ClientWelcome($client));
 
-        WelcomeClient::dispatch($client);
+        // WelcomeClient::dispatch($client);
 
         event(new NewClient($client));
 

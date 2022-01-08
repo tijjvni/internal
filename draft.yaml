@@ -31,6 +31,7 @@ models:
     name: string:50
   Issue:
     priority: integer
+    summary: text
     status: foreign:issue_statuses.id
     relationships:
       hasMany: IssueActivity

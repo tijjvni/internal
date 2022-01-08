@@ -8,6 +8,9 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 
+use Illuminate\Support\Facades\Mail;
+use App\Models\Client;
+
 class WelcomeClient implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
@@ -19,7 +22,7 @@ class WelcomeClient implements ShouldQueue
      *
      * @return void
      */
-    public function __construct($client)
+    public function __construct(Client $client)
     {
         $this->client = $client;
     }
@@ -32,5 +35,6 @@ class WelcomeClient implements ShouldQueue
     public function handle()
     {
         //
+        Mail::to($this->client->user->email)->send(new ClientWelcome($this->client));
     }
 }
