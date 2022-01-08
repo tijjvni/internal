@@ -30,7 +30,6 @@ class Create extends Component
         $client->user_id = $user->id;
         $client->save();
 
-
         $this->emit('NewClient',$client);
 
     }

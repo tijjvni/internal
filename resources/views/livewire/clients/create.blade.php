@@ -27,10 +27,10 @@
 
         <x-slot name="actions">
             <x-jet-action-message class="mr-3" on="saved">
-                {{ __('Saved.') }}
+                {{ __('Client added successfully.') }}
             </x-jet-action-message>
 
-            <x-jet-button wire:loading.attr="disabled" wire:target="photo">
+            <x-jet-button wire:loading.attr="disabled" wire:target="createClient">
                 {{ __('Save') }}
             </x-jet-button>
         </x-slot>
