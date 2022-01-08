@@ -4,11 +4,13 @@ namespace App\Http\Livewire\Clients;
 
 use Livewire\Component;
 
+use App\Models\Client;
+
 class Index extends Component
 {
 
     public $clients;
-    public function mount($clients){
+    public function mount(Client $clients){
         dd($this->clients = $clients);
     }
 
