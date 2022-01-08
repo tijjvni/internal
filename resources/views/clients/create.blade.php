@@ -1,8 +1,11 @@
-{{--
-    @extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Clients') }}
+        </h2>
+    </x-slot>
 
-    @section('content')
-    
+    <div class="py-12">
         <!-- This example requires Tailwind CSS v2.0+ -->
         <div class="lg:flex lg:items-center lg:justify-between">
             <div class="flex-1 min-w-0">
@@ -23,9 +26,7 @@
                 </span>
             </div>
         </div>
-            
 
         @livewire('clients.create')
-
-    @endsection
---}}
+    </div>
+</x-app-layout>
