@@ -9,6 +9,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 
 use Illuminate\Support\Facades\Mail;
+use App\Mail\ClientWelcome;
 use App\Models\Client;
 
 class WelcomeClient implements ShouldQueue
