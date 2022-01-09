@@ -13,6 +13,12 @@ class Create extends Component
     public $name;
     public $email;
 
+    protected $listeners = ['NewClient' => 'newClient'];
+
+    public function newClient(Client $client)){
+
+    }
+
     public function createClient(){
 
         $this->validate([
@@ -27,12 +33,10 @@ class Create extends Component
                 
 
         $user = new User;
-        $user->name = $name;
+        $user->name = $name;Post $post)
         $user->email = $email;
         $user->password = bcrypt($password);
         $user->save();
-
-        dd($user);
 
         $client = new Client;
         $client->name = $name;
@@ -48,3 +52,5 @@ class Create extends Component
         return view('livewire.clients.create');
     }
 }
+
+
