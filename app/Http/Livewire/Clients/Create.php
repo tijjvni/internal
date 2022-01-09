@@ -13,7 +13,7 @@ class Create extends Component
     public $name;
     public $email;
 
-    public function createClient(ClientStoreRequest $request){
+    public function createClient(){
 
         $this->validate([
             'name' => 'required|string|max:255',
