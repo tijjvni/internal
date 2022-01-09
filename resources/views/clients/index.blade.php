@@ -11,6 +11,6 @@
     </x-slot>
 
     <div class="p-5">
-            {{ count($clients) }}
+            {{ $clients->dd() }}
     </div>
 </x-app-layout>
