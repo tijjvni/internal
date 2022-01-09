@@ -25,7 +25,6 @@ class Create extends Component
         $email = $this->email;
 
         $password = substr(str_shuffle(md5(time())),0,10);
-                
 
         $user = new User;
         $user->name = $name;
@@ -39,8 +38,10 @@ class Create extends Component
         $client->save();
 
 
-        $this->emitTo('index','NewClient',$client);
-        session()->flash('banner',$client->name.' added successfully.');
+        $this->emitTo('index','NewClient',$client);        
+	    session()->flash('flash.banner', $client->name.' added successfully'
+    );
+
         return redirect()->route('clients.index'); 
     }
 
