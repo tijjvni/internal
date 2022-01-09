@@ -15,7 +15,7 @@ class Create extends Component
 
     protected $listeners = ['NewClient'];
     
-    public function NewClient(Client $client){
+    public function NewClient($client){
         // WelcomeClient::dispatch($client);
         dd($client);
     }
