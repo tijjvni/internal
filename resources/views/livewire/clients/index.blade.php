@@ -30,10 +30,10 @@
                                         </div>
                                         <div class="ml-4">
                                             <div class="text-sm font-medium text-gray-900">
-                                            Jane Cooper
+                                            {{$client->name}}
                                             </div>
                                             <div class="text-sm text-gray-500">
-                                            jane.cooper@example.com
+                                            {{$client->user->email}}
                                             </div>
                                         </div>
                                         </div>
@@ -44,7 +44,7 @@
                                         </span>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <a href="#" class="text-indigo-600 hover:text-indigo-900">view</a>
+                                        <a href="/client/{{$client->idate}}" class="text-indigo-600 hover:text-indigo-900">view</a>
                                     </td>
                                 </tr>
                             @endforeach
