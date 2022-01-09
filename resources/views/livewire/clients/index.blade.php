@@ -26,8 +26,8 @@
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
                                         <div class="flex-shrink-0 h-10 w-10">
-                                            <span class="p-5 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">
-                                                {{ substr($client->name,0,1) }}
+                                            <span class="px-5 py-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">
+                                                <span class="text-xl">{{ substr($client->name,0,1) }}</span>
                                             </span>
                                         </div>
                                         <div class="ml-4">
