@@ -44,10 +44,10 @@ class Create extends Component
         $client->save();
 
 
-        $this->emit('index','NewClient',$client);        
+        $this->emit('NewClient',$client);        
 	    session()->flash('flash.banner', $client->name.' added successfully');
 
-        // return redirect()->route('clients.index'); 
+        return redirect()->route('clients.index'); 
     }
 
     public function render()
