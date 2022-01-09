@@ -7,6 +7,7 @@ use Livewire\Component;
 use App\Http\Requests\ClientStoreRequest;
 use App\Models\Client;
 use App\Models\User;
+use App\Jobs\WelcomeClient;
 
 class Create extends Component
 {
