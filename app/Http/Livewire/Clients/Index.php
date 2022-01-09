@@ -20,6 +20,7 @@ class Index extends Component
     }
 
     public function mount($clients){
+        dd('its here');
         dd($clients);
     }
     
