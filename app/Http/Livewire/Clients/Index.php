@@ -12,21 +12,23 @@ class Index extends Component
 
     protected $listeners = ['NewClient'];
     
+    public $clients;
+
     public function NewClient(Client $client){
         WelcomeClient::dispatch($client);
-        // dd($client);
+        dd($client);
     }
 
-    public $clients;
-    public function mount(Client $clients){
-        $this->clients = $clients;
+    public function mount($clients){
+        dd($clients);
     }
+    
 
     public function render()
     {
         $clients = $this->clients;
         return view('livewire.clients.index',[
-            'clients' => $clients,
+            'clients' => $clients
         ]);
     }
 }
