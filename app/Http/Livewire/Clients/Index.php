@@ -12,7 +12,7 @@ class Index extends Component
 
     protected $listeners = ['NewClient'];
     
-    public $clients;
+    protected $clients;
 
     public function NewClient(Client $client){
         WelcomeClient::dispatch($client);
@@ -20,8 +20,7 @@ class Index extends Component
     }
 
     public function mount($clients){
-        dd('its here');
-        dd($clients);
+        $this->clients = $clients;
     }
     
 
