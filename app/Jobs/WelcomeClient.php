@@ -38,6 +38,7 @@ class WelcomeClient implements ShouldQueue
     {
         //
         Mail::to($this->client->user->email)->send(new ClientWelcome($this->client));
+        dd($this->client);
         return new JsonResponse(
             [
                 'success' => true, 
@@ -45,7 +46,6 @@ class WelcomeClient implements ShouldQueue
             ], 
             200
         );        
-        dd($this->client);
         // Mail::to($this->client->user->email)->send(new ClientWelcome($this->client));
     }
 }
