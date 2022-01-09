@@ -19,8 +19,9 @@ class Create extends Component
     public function NewClient(Client $client){
         WelcomeClient::dispatch($client);
 
-        $client->dd();
+        // $client->dd();
 
+        dd($client);
     }
 
     public function createClient(){
