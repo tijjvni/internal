@@ -7,20 +7,12 @@ use Livewire\Component;
 use App\Http\Requests\ClientStoreRequest;
 use App\Models\Client;
 use App\Models\User;
-use App\Jobs\WelcomeClient;
 
 class Create extends Component
 {
     public $name;
     public $email;
 
-    protected $listeners = ['NewClient'];
-    
-    public function NewClient(Client $client){
-        WelcomeClient::dispatch($client);
-
-        dd($client);
-    }
 
     public function createClient(){
 
@@ -46,8 +38,8 @@ class Create extends Component
         $client->user_id = $user->id;
         $client->save();
 
-        $this->emit('NewClient',$client->id);
 
+        $this->emitTo('index','NewClient',$client);
         return redirect()->route('clients.index');
     }
 
