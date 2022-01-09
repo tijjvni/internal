@@ -18,12 +18,15 @@ class Index extends Component
     }
 
     public $clients;
-    public function mount($clients){
+    public function mount(Client $clients){
         $this->clients = $clients;
     }
 
     public function render()
     {
-        return view('livewire.clients.index');
+        $clients = $this->clients;
+        return view('livewire.clients.index',[
+            'clients' => $clients,
+        ]);
     }
 }

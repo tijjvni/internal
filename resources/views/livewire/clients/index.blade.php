@@ -19,9 +19,9 @@
                             </th>
                             </tr>
                         </thead>
-                        <tbody class="bg-white divide-y divide-gray-200" x-data="{ clients: $wire.get('clients') }">
+                        <tbody class="bg-white divide-y divide-gray-200">
 
-                            <template x-for="client in clients">
+                            @foreach($client in $clients)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
@@ -47,7 +47,7 @@
                                         <a href="#" class="text-indigo-600 hover:text-indigo-900">view</a>
                                     </td>
                                 </tr>
-                            </template>
+                            @endforeach
 
                         </tbody>
                     </table>
