@@ -13,6 +13,12 @@ class Create extends Component
     public $name;
     public $email;
 
+    protected $listeners = ['NewClient'];
+    
+    public function NewClient(Client $client){
+        WelcomeClient::dispatch($client);
+        dd($client);
+    }
 
     public function createClient(){
 
@@ -38,11 +44,10 @@ class Create extends Component
         $client->save();
 
 
-        $this->emitTo('index','NewClient',$client);        
-	    session()->flash('flash.banner', $client->name.' added successfully'
-    );
+        $this->emit('index','NewClient',$client);        
+	    session()->flash('flash.banner', $client->name.' added successfully');
 
-        return redirect()->route('clients.index'); 
+        // return redirect()->route('clients.index'); 
     }
 
     public function render()
