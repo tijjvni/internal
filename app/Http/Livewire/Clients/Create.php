@@ -14,14 +14,15 @@ class Create extends Component
     public $email;
 
     public function createClient(){
-        $request = request()->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email',
-        ]);
 
-        dd($request);
+        // $request = request()->validate([
+        //     'name' => 'required|string|max:255',
+        //     'email' => 'required|email',
+        // ]);
 
-        $name = request()->only('name');
+        // dd($request);
+
+        dd($name = request()->only('name'));
         $email = request()->only('email');
 
         $password = substr(str_shuffle(md5(time())),0,10);
