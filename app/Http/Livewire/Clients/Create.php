@@ -19,8 +19,6 @@ class Create extends Component
     public function NewClient(Client $client){
         WelcomeClient::dispatch($client);
 
-        // $client->dd();
-
         dd($client);
     }
 
@@ -48,8 +46,9 @@ class Create extends Component
         $client->user_id = $user->id;
         $client->save();
 
-        return $this->emit('NewClient',$client->id);
+        $this->emit('NewClient',$client->id);
 
+        return redirect()->route('clients.index');
     }
 
     public function render()

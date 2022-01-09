@@ -37,11 +37,11 @@ class WelcomeClient implements ShouldQueue
     public function handle()
     {
         //
-        Mail::to($email)->send(new ClientWelcome($his->client));
+        Mail::to($this->client->user->email)->send(new ClientWelcome($this->client));
         return new JsonResponse(
             [
                 'success' => true, 
-                'message' => "Thank you for subscribing to our email, please check your inbox"
+                'message' => "New client profile created, please check inbox"
             ], 
             200
         );        
