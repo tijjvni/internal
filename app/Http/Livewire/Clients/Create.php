@@ -15,15 +15,13 @@ class Create extends Component
 
     public function createClient(ClientStoreRequest $request){
 
-        // $request = request()->validate([
-        //     'name' => 'required|string|max:255',
-        //     'email' => 'required|email',
-        // ]);
+        $this->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+	    ]);
 
-        dd($request);
-
-        dd($name = request()->only('name'));
-        $email = request()->only('email');
+        $name = $this->name;
+        $email = $this->email;
 
         $password = substr(str_shuffle(md5(time())),0,10);
                 
