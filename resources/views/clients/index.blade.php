@@ -11,6 +11,6 @@
     </x-slot>
 
     <div class="p-5">
-            {{ count($client) }}
+            {{ count($clients) }}
     </div>
 </x-app-layout>
