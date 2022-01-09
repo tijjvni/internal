@@ -13,14 +13,14 @@ class Create extends Component
     public $name;
     public $email;
 
-    public function createClient(){
+    public function createClient(ClientStoreRequest $request){
 
         // $request = request()->validate([
         //     'name' => 'required|string|max:255',
         //     'email' => 'required|email',
         // ]);
 
-        // dd($request);
+        dd($request);
 
         dd($name = request()->only('name'));
         $email = request()->only('email');
