@@ -40,7 +40,7 @@ class Create extends Component
 
         $this->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
 	    ]);
 
         $name = $this->name;
