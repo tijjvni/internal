@@ -19,7 +19,7 @@ class Index extends Component
 
     public $clients;
     public function mount($clients){
-        // dd($this->clients = $clients);
+        $this->clients = $clients;
     }
 
     public function render()
