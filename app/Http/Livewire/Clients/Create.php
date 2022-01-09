@@ -17,7 +17,14 @@ class Create extends Component
     protected $listeners = ['NewClient'];
     
     public function NewClient($client){
-        WelcomeClient::dispatch($client['id']);
+        try {
+            $client = Client::findOrFail($client['id']);
+            WelcomeClient::dispatch($client);
+        } catch (\Throwable $th) {
+            session()->flash('flash.banner','Fatal error occured. Action failed');
+
+            return redirect()->route('clients.index'); 
+        }
         // dd($client);
     }
 
