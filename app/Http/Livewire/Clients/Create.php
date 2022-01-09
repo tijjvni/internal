@@ -19,6 +19,7 @@ class Create extends Component
             'email' => 'required|email',
         ]);
 
+        dd($request);
 
         $name = request()->only('name');
         $email = request()->only('email');
