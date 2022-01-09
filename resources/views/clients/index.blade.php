@@ -11,8 +11,6 @@
     </x-slot>
 
     <div class="p-5">
-            @livewire('clients.index',[
-            'clients' => $clients
-        ]);    
+            {{ count($client) }}
     </div>
 </x-app-layout>
