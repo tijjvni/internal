@@ -18,7 +18,7 @@ class ClientsController extends Controller
     public function index(Request $request)
     {
         $clients = Client::all();
-
+        
         return view('clients.index', compact('clients'));
     }
 
