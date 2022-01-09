@@ -17,10 +17,10 @@ class Create extends Component
     protected $listeners = ['NewClient'];
     
     public function NewClient(Client $client){
-        WelcomeClient::dispatch($this->client);
+        WelcomeClient::dispatch($client);
 
         $client->dd();
-        
+
     }
 
     public function createClient(){
