@@ -14,7 +14,7 @@ class Index extends Component
     
     public function NewClient(Client $client){
         WelcomeClient::dispatch($client);
-        dd($client);
+        // dd($client);
     }
 
     public $clients;
