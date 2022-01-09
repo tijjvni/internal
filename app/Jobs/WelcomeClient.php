@@ -8,6 +8,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ClientWelcome;
 use App\Models\Client;
@@ -36,6 +37,14 @@ class WelcomeClient implements ShouldQueue
     public function handle()
     {
         //
-        Mail::to($this->client->user->email)->send(new ClientWelcome($this->client));
+        Mail::to($email)->send(new ClientWelcome($his->client));
+        return new JsonResponse(
+            [
+                'success' => true, 
+                'message' => "Thank you for subscribing to our email, please check your inbox"
+            ], 
+            200
+        );        
+        // Mail::to($this->client->user->email)->send(new ClientWelcome($this->client));
     }
 }

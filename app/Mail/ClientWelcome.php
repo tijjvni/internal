@@ -32,6 +32,9 @@ class ClientWelcome extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.clients.welcome');
+        // return $this->view('emails.clients.welcome');
+        return $this
+        ->subject('Welcome to Delitech Solution')
+        ->markdown('emails.clients.welcome');   
     }
 }
