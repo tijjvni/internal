@@ -7,6 +7,7 @@ use Livewire\Component;
 use App\Http\Requests\ClientStoreRequest;
 use App\Models\Client;
 use App\Models\User;
+use App\Jobs\WelcomeClient;
 
 class Create extends Component
 {
@@ -16,7 +17,10 @@ class Create extends Component
     protected $listeners = ['NewClient'];
     
     public function NewClient(Client $client){
-        dd($client);
+        WelcomeClient::dispatch($this->client);
+
+        $client->dd();
+        
     }
 
     public function createClient(){
