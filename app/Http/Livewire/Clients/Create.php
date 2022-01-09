@@ -9,6 +9,10 @@ use App\Models\Client;
 use App\Models\User;
 use App\Jobs\WelcomeClient;
 
+
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ClientWelcome;
+
 class Create extends Component
 {
     public $name;
@@ -21,7 +25,9 @@ class Create extends Component
         // dd($client);
         try {
             $client = Client::findOrFail($client['id']);
-            WelcomeClient::dispatch($client);
+            // WelcomeClient::dispatch($client);
+            Mail::to($this->client->user->email)->send(new ClientWelcome($this->client));
+            dd($client);
         } catch (\Throwable $th) {
             session()->flash('flash.banner','Fatal error occured. '.$th->getMessage());
 
