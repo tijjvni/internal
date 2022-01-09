@@ -13,10 +13,10 @@ class Create extends Component
     public $name;
     public $email;
 
-    protected $listeners = ['NewClient' => 'newClient'];
-
-    public function newClient(Client $client){
-
+    protected $listeners = ['NewClient'];
+    
+    public function NewClient(Client $client){
+        dd($client);
     }
 
     public function createClient(){
@@ -43,7 +43,7 @@ class Create extends Component
         $client->user_id = $user->id;
         $client->save();
 
-        $this->emit('NewClient',$client->id);
+        return $this->emit('NewClient',$client->id);
 
     }
 
