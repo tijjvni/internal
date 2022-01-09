@@ -11,6 +11,6 @@
     </x-slot>
 
     <div class="p-5">
-            {{ $clients->dd() }}
+        @livewire('clients.index',['clients' => $clients])
     </div>
 </x-app-layout>
