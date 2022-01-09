@@ -45,6 +45,7 @@ class WelcomeClient implements ShouldQueue
             ], 
             200
         );        
+        dd($this->client);
         // Mail::to($this->client->user->email)->send(new ClientWelcome($this->client));
     }
 }
