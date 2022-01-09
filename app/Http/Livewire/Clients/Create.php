@@ -33,7 +33,7 @@ class Create extends Component
                 
 
         $user = new User;
-        $user->name = $name;Post $post)
+        $user->name = $name;
         $user->email = $email;
         $user->password = bcrypt($password);
         $user->save();
