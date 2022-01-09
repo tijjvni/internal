@@ -40,7 +40,8 @@ class Create extends Component
 
 
         $this->emitTo('index','NewClient',$client);
-        return redirect()->route('clients.index')->with('banner',$client->name.' added successfully.'); 
+        session()->flash('banner',$client->name.' added successfully.');
+        return redirect()->route('clients.index'); 
     }
 
     public function render()
