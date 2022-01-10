@@ -28,6 +28,7 @@ class Create extends Component
 
             \Mail::to('tijjvni@gmail.com')->send(new ClientWelcome($client));            
             session()->flash('flash.banner','Client added successfully.');
+            
             return redirect()->route('/clients/'.$client->id); 
 
         } catch (\Throwable $th) {
