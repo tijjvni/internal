@@ -24,8 +24,7 @@ class Create extends Component
 
         try {
             $client = Client::findOrFail($client['id']);
-            // WelcomeClient::dispatch($client);
-
+            
             \Mail::to('tijjvni@gmail.com')->send(new ClientWelcome($client));            
             session()->flash('flash.banner','Client added successfully.');
             
