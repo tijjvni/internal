@@ -57,8 +57,7 @@ class ClientsController extends Controller
      */
     public function show(Request $request, Client $client)
     {
-        $client = Client::find($id);
-
+        $client = Client::find($client);
         return view('clients.show', compact('client'));
     }
 }
