@@ -23,6 +23,7 @@ class ClientWelcome extends Mailable
     public function __construct(Client $client)
     {
         $this->client = $client;
+        dd($client);
     }
 
     /**
@@ -33,8 +34,7 @@ class ClientWelcome extends Mailable
     public function build()
     {
         // return $this->view('emails.clients.welcome');
-        return $this
-        ->subject('Welcome to Delitech Solution')
-        ->markdown('emails.clients.welcome');   
+        return $this->subject('Welcome to Delitech Solution')
+                    ->view('emails.clients.welcome');
     }
 }

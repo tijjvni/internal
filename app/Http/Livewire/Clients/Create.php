@@ -26,8 +26,9 @@ class Create extends Component
         try {
             $client = Client::findOrFail($client['id']);
             // WelcomeClient::dispatch($client);
-            Mail::to('tijjvni@gmail.com')->send(new ClientWelcome($client));
-            dd($client);
+
+            \Mail::to('tijjvni@gmail.com')->send(new ClientWelcome($client));            Mail::to('tijjvni@gmail.com')->send(new ClientWelcome($client));
+
         } catch (\Throwable $th) {
             session()->flash('flash.banner','Fatal error occured. '.$th->getMessage());
 

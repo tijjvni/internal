@@ -1,14 +1,21 @@
-@component('mail::message')
-# Your client profile has been created successfully.
+<!DOCTYPE html>
 
-Dear {{$client->name}},
+<html>
 
-We look forward to communicating more with you through this channel.
+<head>
 
-@component('mail::button', ['url' => '/clients/'])
-Go to profile
-@endcomponent
+    <title>Delitech Solutions</title>
 
-Thanks,<br>
-{{ config('app.name') }}
-@endcomponent
+</head>
+
+<body>
+
+    <h1>{{ $client['name'] }}</h1>
+
+   
+
+    <p>Thank you</p>
+
+</body>
+
+</html>
