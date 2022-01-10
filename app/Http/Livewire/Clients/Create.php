@@ -29,11 +29,9 @@ class Create extends Component
             session()->flash('flash.banner','Client added successfully.');
             
         } catch (\Throwable $th) {
-            session()->flash('flash.banner','Fatal error occured. '.$th->getMessage());
+            session()->flash('flash.banner','Fatal error occured while sending welcome mail. '.$th->getMessage());
 
         }
-        return redirect()->route('clients.index'); 
-
     }
 
     public function createClient(){
@@ -63,7 +61,7 @@ class Create extends Component
         $this->emit('NewClient',$client);        
 	    session()->flash('flash.banner', $client->name.' added successfully');
 
-        // return redirect()->route('clients.index'); 
+        return redirect()->route('clients.index'); 
     }
 
     public function render()
