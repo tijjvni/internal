@@ -28,13 +28,11 @@ class Create extends Component
             \Mail::to('tijjvni@gmail.com')->send(new ClientWelcome($client));            
             session()->flash('flash.banner','Client added successfully.');
             
-            return redirect()->route('/clients/'.$client->id); 
-
         } catch (\Throwable $th) {
             session()->flash('flash.banner','Fatal error occured. '.$th->getMessage());
 
-            return redirect()->route('clients.index'); 
         }
+        return redirect()->route('clients.index'); 
 
     }
 
