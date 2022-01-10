@@ -21,14 +21,14 @@ class Create extends Component
     protected $listeners = ['NewClient'];
     
     public function NewClient($client){
-        // WelcomeClient::dispatch($client['id']);
-        // dd($client);
+
         try {
             $client = Client::findOrFail($client['id']);
             // WelcomeClient::dispatch($client);
 
             \Mail::to('tijjvni@gmail.com')->send(new ClientWelcome($client));            
-            // Mail::to('tijjvni@gmail.com')->send(new ClientWelcome($client));
+            session()->flash('flash.banner','Client added successfully.');
+            return redirect()->route('/clients/'.$client->id); 
 
         } catch (\Throwable $th) {
             session()->flash('flash.banner','Fatal error occured. '.$th->getMessage());

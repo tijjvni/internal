@@ -23,7 +23,6 @@ class ClientWelcome extends Mailable
     public function __construct(Client $client)
     {
         $this->client = $client;
-        dd($client);
     }
 
     /**
