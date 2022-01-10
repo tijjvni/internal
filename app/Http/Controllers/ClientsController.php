@@ -55,9 +55,9 @@ class ClientsController extends Controller
      * @param \App\Models\Client $client
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, Client $client)
+    public function show(Request $request, $client)
     {
-        $client = Client::find($client);
+        $client = Client::findOrFail($client);
         return view('clients.show', compact('client'));
     }
 }
