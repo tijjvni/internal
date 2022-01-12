@@ -3,7 +3,7 @@
     <!-- Code block starts -->
     <div class="my-6 lg:my-12 container px-6 mx-auto flex flex-col md:flex-row items-start md:items-center justify-between pb-4 border-b border-gray-300">
         <div>
-            <h4 class="text-2xl font-bold leading-tight text-gray-800 dark:text-gray-100">User Profile</h4>
+            <h4 class="text-2xl font-bold leading-tight text-gray-800 dark:text-gray-100">{{$client->name}}</h4>
             <ul aria-label="current Status" class="flex flex-col md:flex-row items-start md:items-center text-gray-600 dark:text-gray-400 text-sm mt-3">
                 <li class="flex items-center mr-4">
                     <div class="mr-1">
@@ -12,19 +12,12 @@
                     </div>
                     <span>Active</span>
                 </li>
-                <li class="flex items-center mr-4 mt-4 md:mt-0">
-                    <div class="mr-1">
-                        <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/simple_with_sub_text_and_border-svg2.svg" alt="Trending">
-                        <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/simple_with_sub_text_and_border-svg2dark.svg" alt="Trending">
-                    </div>
-                    <span> Trending</span>
-                </li>
                 <li class="flex items-center mt-4 md:mt-0">
                     <div class="mr-1">
                         <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/simple_with_sub_text_and_border-svg3.svg" alt="date">
                         <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/simple_with_sub_text_and_border-svg3dark.svg" alt="date">
                     </div>
-                    <span>Started on 29 Jan 2020</span>
+                    <span>{{ $client->created_at }}</span>
                 </li>
             </ul>
         </div>
