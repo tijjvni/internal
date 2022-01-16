@@ -32,10 +32,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::resource('issues', App\Http\Controllers\IssuesController::class)->except('edit', 'update', 'destroy');
 
     
-    Route::prefix('/users')->group(function(){
-        Route::get('/{id}/activate', [App\Http\Controllers\UsersController::class, 'activate']);
-        Route::get('/{id}/deactivate', [App\Http\Controllers\UsersController::class, 'deactivate']);
-    });
+    // Route::prefix('/users')->group(function(){
+    //     Route::get('/{id}/activate', [App\Http\Controllers\UsersController::class, 'activate']);
+    //     Route::get('/{id}/deactivate', [App\Http\Controllers\UsersController::class, 'deactivate']);
+    // });
 
     Route::resource('users', App\Http\Controllers\UserController::class);
 });
