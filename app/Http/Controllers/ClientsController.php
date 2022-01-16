@@ -6,6 +6,7 @@ use App\Events\NewClient;
 use App\Http\Requests\ClientsStoreRequest;
 use App\Mail\ClientWelcome;
 use App\Models\Client;
+use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -18,8 +19,9 @@ class ClientsController extends Controller
     public function index(Request $request)
     {
         $clients = Client::all();
+        $projectsCount = Project::count();
         
-        return view('clients.index', compact('clients'));
+        return view('clients.index', compact('clients','projectsCount'));
     }
 
     /**

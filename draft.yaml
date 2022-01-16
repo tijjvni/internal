@@ -99,3 +99,5 @@ controllers:
     show:
       find: issue.id
       render: issues.show with:issue
+
+
